@@ -3,8 +3,12 @@ package com.thisisnotajoke.interview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.thisisnotajoke.interview.repository.MobileInterviewRepository
@@ -16,16 +20,20 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @Inject lateinit var service: MobileInterviewRepository
+    @Inject
+    lateinit var service: MobileInterviewRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             InterviewTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    PeopleList(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Box(Modifier.safeDrawingPadding()) {
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        PeopleList(
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                    }
                 }
             }
         }
