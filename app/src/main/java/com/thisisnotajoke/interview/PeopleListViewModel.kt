@@ -6,14 +6,18 @@ import androidx.lifecycle.viewModelScope
 import com.thisisnotajoke.interview.model.People
 import com.thisisnotajoke.interview.model.PeopleState
 import com.thisisnotajoke.interview.repository.MobileInterviewRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class PeopleListViewModel @Inject constructor(
+@Inject
+@ViewModelKey
+@ContributesIntoMap(AppScope::class)
+class PeopleListViewModel(
     private val service: MobileInterviewRepository
 ) : ViewModel() {
 

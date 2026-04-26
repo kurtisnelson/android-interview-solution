@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.metro)
 }
 
 android {
@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.thisisnotajoke.interview"
-        minSdk = 26
+        minSdk = 28
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -39,8 +39,6 @@ android {
 }
 
 dependencies {
-    ksp(libs.hilt.compiler)
-
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -52,10 +50,11 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
     implementation(libs.kotlinx.serialization)
+    implementation(libs.metrox.android)
+    implementation(libs.metrox.viewmodel.compose)
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.kotlinx.serialization)
     implementation(libs.square.okhttp3)
-    implementation(libs.hilt.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

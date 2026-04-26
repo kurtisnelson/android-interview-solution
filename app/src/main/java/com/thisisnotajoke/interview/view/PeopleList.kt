@@ -19,13 +19,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.thisisnotajoke.interview.PeopleListViewModel
 import com.thisisnotajoke.interview.model.PeopleState
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PeopleList(
     modifier: Modifier = Modifier,
-    viewModel: PeopleListViewModel = viewModel(),
+    viewModel: PeopleListViewModel = metroViewModel(),
 ) {
     val response by viewModel.people.collectAsStateWithLifecycle()
     var isRefreshing by remember { mutableStateOf(false) }
