@@ -1,5 +1,5 @@
 [versions]
-agp = "9.0.0"
+agp = "9.2.0"
 coilCompose = "3.3.0"
 kotlin = "2.2.10"
 kotlin-serialization = "1.9.0"
