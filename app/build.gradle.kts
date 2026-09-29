@@ -6,6 +6,12 @@ plugins {
     alias(libs.plugins.metro)
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 android {
     namespace = "com.thisisnotajoke.interview"
     compileSdk = 37
@@ -28,10 +34,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
     buildFeatures {
         compose = true
