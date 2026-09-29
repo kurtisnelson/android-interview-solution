@@ -56,9 +56,9 @@ dependencies {
     implementation(libs.square.retrofit.converter.kotlinx.serialization)
     implementation(libs.square.okhttp3)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.ui.test.junit4)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
